@@ -113,11 +113,31 @@
                 alert("You need install extension tronlink and login tronlink!");
             }
         }
+        $(document).ready(function () {
+
+            $("#popup").hide().fadeIn(1000);
+
+            $("#close").on("click", function (e) {
+                e.preventDefault();
+                $("#popup").fadeOut(1000);
+            });
+
+        });
 
     </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body onload="checkInstall()">
+
+<div id="popup" class="modal">
+    <div class="popup-content">
+        <span class="close" id="close">&times;</span>
+        <img class="img-popup" src="/images/ham-sale.jpg" width="100%" height="80%" alt="popup">
+    </div>
+
+</div>
+
 <div class="App">
     <div class="header">
         <!--        <div class="clickableButton nav-header">-->
@@ -141,13 +161,15 @@
             <a href="farms.html">
                 <p class="clickableButton">Farm | </p>
             </a>
-            <a href="https://docs.habu.finance/habu-ecosystem/how-to-buy-ham-token-via-tronlink-walllet">
-                <p class="clickableButton">Helps | </p>
+            <a href="https://docs.habu.finance/habu-ecosystem/how-to-buy-ham-token-via-tronlink-walllet"
+               target="_blank">
+                <p class="clickableButton">Help | </p>
             </a>
-            <a href="https://github.com">
+            <a href="https://github.com/habufinance/web" target="_blank">
                 <p class="clickableButton">Github | </p>
             </a>
-            <a href="https://justswap.io/#/home?tokenAddress=TYVMRcSxXBfRda6aShMRRsc5ovRWHEeZS4&type=swap">
+            <a href="https://justswap.io/#/home?tokenAddress=TYVMRcSxXBfRda6aShMRRsc5ovRWHEeZS4&type=swap"
+               target="_blank">
                 <p class="clickableButton">Justswap</p>
             </a>
         </div>
@@ -224,31 +246,31 @@
                     <!--                        <div class="swapButton m-0" id="justSwap-btn">JustSwap HAM/TRX</div>-->
                     <!--                    </div>-->
                 </div>
-                                <div id="clockdiv">
-                                    <div>
-                                        <span class="days"></span>
-                                        <div class="smalltext">Days</div>
-                                    </div>
-                                    <div>
-                                        <span class="hours"></span>
-                                        <div class="smalltext">Hours</div>
-                                    </div>
-                                    <div>
-                                        <span class="minutes"></span>
-                                        <div class="smalltext">Minutes</div>
-                                    </div>
-                                    <div>
-                                        <span class="seconds"></span>
-                                        <div class="smalltext">Seconds</div>
-                                    </div>
-                                </div>
+                <div id="clockdiv" class="clock">
+                    <div>
+                        <span class="days"></span>
+                        <div class="smalltext">Days</div>
+                    </div>
+                    <div>
+                        <span class="hours"></span>
+                        <div class="smalltext">Hours</div>
+                    </div>
+                    <div>
+                        <span class="minutes"></span>
+                        <div class="smalltext">Minutes</div>
+                    </div>
+                    <div>
+                        <span class="seconds"></span>
+                        <div class="smalltext">Seconds</div>
+                    </div>
+                </div>
                 <script>
                     var hamAmount = 0;
                     var trxAmount = 0;
                     $("#amount").on("input", function () {
 
                         trxAmount = $("#amount").val();
-                        var price = 12;
+                        var price = 16;
 
                         hamAmount = parseInt(trxAmount) / parseInt(price);
                         $("#hamAmount").text(hamAmount + " HAM");
@@ -364,7 +386,7 @@
                  style="padding-left: 16px; padding-right: 16px;">
                 <div class="dataBox" style="height: 130px;text-align: center">
                     <h2 style="text-align: center" id="scBalance">0.000</h2>
-                    <p style="text-align: center">Hamburger seed available</p>
+                    <p style="text-align: center">Hamburger pre-sales available</p>
                 </div>
             </div>
             <div align="left" class="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-8"
